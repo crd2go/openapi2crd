@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := build
+
 # Define the output binary location
 BINARY_DIR  ?= bin
 BINARY_NAME := openapi2crd
