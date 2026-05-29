@@ -17,7 +17,7 @@ dir: '{{.InterfaceDir}}'
 filename: '{{base (trimSuffix ".go" .InterfaceFile)}}_mock.go'
 log-level: info
 mockname: '{{.InterfaceName}}{{.Mock}}'
-outpkg: '{{.SrcPackageName}}'
+outpkg: '{{.PackageName}}'
 recursive: false
 packages:
   github.com/crd2go/openapi2crd/pkg/config:
