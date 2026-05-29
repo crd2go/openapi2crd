@@ -110,7 +110,7 @@ paths: {}
 		fs := afero.NewMemMapFs()
 		kinLoader := NewKinOpenAPI(fs)
 		atlas := NewPackageResolver(kinLoader)
-		var _ Loader = NewLoader(kinLoader, atlas)
+		var _ = NewLoader(kinLoader, atlas)
 	})
 }
 

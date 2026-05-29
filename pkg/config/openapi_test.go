@@ -120,7 +120,7 @@ components:
 	require.NoError(t, afero.WriteFile(fs, "test.yaml", []byte(input), 0644))
 
 	loader := NewKinOpenAPI(fs)
-	spec, err := loader.loadFlattened(nil, "test.yaml")
+	spec, err := loader.loadFlattened(context.TODO(), "test.yaml")
 	require.NoError(t, err)
 	require.NotNil(t, spec)
 

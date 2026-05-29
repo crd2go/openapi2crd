@@ -26,7 +26,7 @@ import (
 func ValidateCRD(ctx context.Context, crd *apiextensions.CustomResourceDefinition) error {
 	errorList := validation.ValidateCustomResourceDefinition(ctx, crd)
 	if len(errorList) > 0 {
-		return fmt.Errorf("error validating CRD %v: %w", crd.ObjectMeta.Name, errorList.ToAggregate())
+		return fmt.Errorf("error validating CRD %v: %w", crd.Name, errorList.ToAggregate())
 	}
 
 	return nil
