@@ -10,7 +10,7 @@ import (
 	"github.com/getkin/kin-openapi/openapi3"
 	mock "github.com/stretchr/testify/mock"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/apis/config/v1alpha1"
+	"github.com/crd2go/openapi2crd/pkg/apis/config/v1alpha1"
 )
 
 // NewLoaderMock creates a new instance of LoaderMock. It also registers a testing interface on the mock and a cleanup function to assert the mocks expectations.

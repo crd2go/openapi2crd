@@ -20,7 +20,7 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/apis/config/v1alpha1"
+	"github.com/crd2go/openapi2crd/pkg/apis/config/v1alpha1"
 )
 
 func Parse(raw []byte) (*v1alpha1.Config, error) {

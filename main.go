@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/cmd"
+	"github.com/crd2go/openapi2crd/cmd"
 )
 
 func main() {

@@ -23,8 +23,8 @@ import (
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 	"k8s.io/utils/ptr"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/converter"
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/plugins"
+	"github.com/crd2go/openapi2crd/pkg/converter"
+	"github.com/crd2go/openapi2crd/pkg/plugins"
 )
 
 func (g *Generator) Convert(input converter.PropertyConvertInput) *apiextensions.JSONSchemaProps {

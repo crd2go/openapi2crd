@@ -20,7 +20,7 @@ import (
 
 	"github.com/getkin/kin-openapi/openapi3"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/apis/config/v1alpha1"
+	"github.com/crd2go/openapi2crd/pkg/apis/config/v1alpha1"
 )
 
 // openAPILoader implements Loader by routing to the appropriate internal

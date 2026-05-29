@@ -27,8 +27,8 @@ import (
 	"github.com/spf13/afero"
 	"golang.org/x/sync/singleflight"
 
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/apis/config/v1alpha1"
-	"github.com/mongodb/mongodb-atlas-kubernetes/tools/openapi2crd/pkg/flatten"
+	"github.com/crd2go/openapi2crd/pkg/apis/config/v1alpha1"
+	"github.com/crd2go/openapi2crd/pkg/flatten"
 )
 
 // Loader loads an OpenAPI spec based on the provided definition.
