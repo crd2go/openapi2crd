@@ -10,7 +10,7 @@ GO_FILES := $(shell find . -name '*.go' -not -path './vendor/*')
 PACKAGES := $(shell go list ./...)
 
 # GO TOOLS
-GCI := go tool -modfile=../toolbox/go.mod gci
+GCI := go tool gci
 
 crds: build ## Generate CRDs from config file
 	@echo "==> Generating CRDs..."
@@ -37,7 +37,7 @@ unit-test: ## Run unit tests with race detection and coverage
 
 gen-mock: ## Generate mocks for interfaces
 	@echo "==> Generating mocks..."
-	@mockery --config .mockery.yaml
+	@go tool mockery --config .mockery.yaml
 
 all: gen-mock fmt unit-test build
 
