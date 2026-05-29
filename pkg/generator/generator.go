@@ -77,7 +77,7 @@ func (g *Generator) Generate(ctx context.Context, crdConfig *v1alpha1.CRDConfig)
 			return nil, fmt.Errorf("no OpenAPI definition named %q found", mapping.OpenAPIRef.Name)
 		}
 
-		openApiSpec, err := g.loader.Load(ctx, def)
+		openAPISpec, err := g.loader.Load(ctx, def)
 		if err != nil {
 			return nil, fmt.Errorf("error loading OpenAPI spec %q: %w", def.Name, err)
 		}
@@ -87,7 +87,7 @@ func (g *Generator) Generate(ctx context.Context, crdConfig *v1alpha1.CRDConfig)
 				&plugins.MappingProcessorRequest{
 					CRD:              crd,
 					MappingConfig:    &mapping,
-					OpenAPISpec:      openApiSpec,
+					OpenAPISpec:      openAPISpec,
 					ExtensionsSchema: extensionsSchema,
 					Converter:        g,
 				},
@@ -101,7 +101,7 @@ func (g *Generator) Generate(ctx context.Context, crdConfig *v1alpha1.CRDConfig)
 			err = p.Process(
 				&plugins.ExtensionProcessorRequest{
 					ExtensionsSchema: extensionsSchema,
-					ApiDefinitions:   g.definitions,
+					APIDefinitions:   g.definitions,
 					MappingConfig:    &mapping,
 				},
 			)
@@ -177,4 +177,3 @@ func clearPropertiesWithoutExtensions(schema *openapi3.Schema) bool {
 
 	return hasExtensions
 }
-

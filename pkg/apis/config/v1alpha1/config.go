@@ -92,7 +92,7 @@ type Extension struct {
 	XKubernetesValidations apiextensionsv1.ValidationRules `json:"x-kubernetes-validations,omitempty"`
 }
 
-type XOpenApiMapping struct {
+type XOpenAPIMapping struct {
 	Property string `json:"property,omitempty"`
 	Type     string `json:"type,omitempty"`
 }

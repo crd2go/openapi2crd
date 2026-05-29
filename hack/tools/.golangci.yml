@@ -33,13 +33,16 @@ linters:
     staticcheck:
       checks:
         - all
+        - "-ST1000" # package-level doc comments not required
+    revive:
+      rules:
+        - name: exported
+          disabled: true
+        - name: package-comments
+          disabled: true
+        - name: unused-parameter
+          disabled: true
 
 formatters:
   enable:
     - gofmt
-
-issues:
-  exclude-rules:
-    - text: "^unused-parameter: .*"
-      linters:
-        - revive

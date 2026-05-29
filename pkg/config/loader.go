@@ -26,7 +26,7 @@ import (
 // openAPILoader implements Loader by routing to the appropriate internal
 // loader based on the OpenAPIDefinition fields.
 type openAPILoader struct {
-	file  *KinOpenAPI
+	file        *KinOpenAPI
 	pkgResolver *PackageResolver
 }
 

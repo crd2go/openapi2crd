@@ -61,18 +61,18 @@ func (r *References) Process(req *MappingProcessorRequest) error {
 func (r *References) addReference(ref configv1alpha1.Reference, targetSchema *apiextensions.JSONSchemaProps) error {
 	var referenceSchema apiextensions.JSONSchemaProps
 
-	openApiPropertyPath := strings.Split(ref.Property, ".")
-	openApiProperty := openApiPropertyPath[len(openApiPropertyPath)-1]
+	openAPIPropertyPath := strings.Split(ref.Property, ".")
+	openAPIProperty := openAPIPropertyPath[len(openAPIPropertyPath)-1]
 	referenceSchema.Type = "object"
 
 	switch len(ref.Target.Properties) {
 	case 0:
 		return errors.New("reference target must have at least one property defined")
 	case 1:
-		referenceSchema.Description = fmt.Sprintf("A reference to a %q resource.\nThe value of %q will be used to set %q.\nMutually exclusive with the %q property.", ref.Target.Type.Kind, ref.Target.Properties[0], openApiProperty, openApiProperty)
+		referenceSchema.Description = fmt.Sprintf("A reference to a %q resource.\nThe value of %q will be used to set %q.\nMutually exclusive with the %q property.", ref.Target.Type.Kind, ref.Target.Properties[0], openAPIProperty, openAPIProperty)
 	default:
 		bulleted := "- " + strings.Join(ref.Target.Properties, "\n- ")
-		referenceSchema.Description = fmt.Sprintf("A reference to a %q resource.\nOne of the following mutually exclusive values will be used to retrieve the %q value:\n\n%s\n\nMutually exclusive with the %q property.", ref.Target.Type.Kind, openApiProperty, bulleted, openApiProperty)
+		referenceSchema.Description = fmt.Sprintf("A reference to a %q resource.\nOne of the following mutually exclusive values will be used to retrieve the %q value:\n\n%s\n\nMutually exclusive with the %q property.", ref.Target.Type.Kind, openAPIProperty, bulleted, openAPIProperty)
 	}
 
 	referenceSchema.Properties = map[string]apiextensions.JSONSchemaProps{
@@ -83,7 +83,7 @@ func (r *References) addReference(ref configv1alpha1.Reference, targetSchema *ap
 	}
 
 	required := sets.New(targetSchema.Required...)
-	required.Delete(openApiProperty)
+	required.Delete(openAPIProperty)
 	targetSchema.Required = required.UnsortedList()
 	slices.Sort(targetSchema.Required)
 

@@ -31,15 +31,14 @@ func mappingSet(node *yaml.Node, key string, value *yaml.Node) {
 	node.Content = append(node.Content, newStringNode(key), value)
 }
 
-// mappingDelete removes a key from a MappingNode. Returns true if the key was found.
-func mappingDelete(node *yaml.Node, key string) bool {
+// mappingDelete removes a key from a MappingNode.
+func mappingDelete(node *yaml.Node, key string) {
 	for i := 0; i < len(node.Content)-1; i += 2 {
 		if node.Content[i].Value == key {
 			node.Content = append(node.Content[:i], node.Content[i+2:]...)
-			return true
+			return
 		}
 	}
-	return false
 }
 
 // mappingHas reports whether a MappingNode contains the given key.
@@ -101,18 +100,18 @@ func getPath(root *yaml.Node, keys ...string) *yaml.Node {
 	return cur
 }
 
-// resolveRef resolves "#/components/schemas/<Name>" and returns (name, node).
-func resolveRef(root *yaml.Node, ref string) (string, *yaml.Node) {
+// resolveRef resolves "#/components/schemas/<Name>" and returns the schema node.
+func resolveRef(root *yaml.Node, ref string) *yaml.Node {
 	const prefix = "#/components/schemas/"
 	if !strings.HasPrefix(ref, prefix) {
-		return "", nil
+		return nil
 	}
 	name := strings.TrimPrefix(ref, prefix)
 	schemas := getPath(root, "components", "schemas")
 	if schemas == nil {
-		return name, nil
+		return nil
 	}
-	return name, asMapping(mappingGet(schemas, name))
+	return asMapping(mappingGet(schemas, name))
 }
 
 // schemaNameFromRef extracts the schema name from "#/components/schemas/<Name>".

@@ -16,7 +16,7 @@ func (p *PrintConditions) Process(req *MappingProcessorRequest) error {
 	//
 	// The CRD validation fails if all versions use the same print columns, in
 	// such case they have to be set at the top level to avoid errors.
-	// Note that the produced YAML still places the print columns at the version 
+	// Note that the produced YAML still places the print columns at the version
 	// level anyways.
 	//
 	// Check out the upstream code for more details:

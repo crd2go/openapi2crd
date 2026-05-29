@@ -145,7 +145,7 @@ func (g *Generator) convertPropertyOrBool(input converter.PropertyConvertInput) 
 	}
 
 	return &apiextensions.JSONSchemaPropsOrBool{
-		Schema:  g.Convert(input.Child(input.Schema, input.ExtensionsSchemaRef, input.Depth+1, input.Path)),
+		Schema: g.Convert(input.Child(input.Schema, input.ExtensionsSchemaRef, input.Depth+1, input.Path)),
 		Allows: true,
 	}
 }

@@ -17,7 +17,7 @@ func resolveSequenceRefs(seq *yaml.Node, root *yaml.Node, kind string) []*yaml.N
 			continue
 		}
 		if ref := asString(mappingGet(m, "$ref")); ref != "" {
-			_, child := resolveRef(root, ref)
+			child := resolveRef(root, ref)
 			if child == nil {
 				fmt.Fprintf(os.Stderr, "warning: could not resolve %s reference: %s\n", kind, ref)
 				continue
@@ -37,7 +37,7 @@ func resolveOrInline(item *yaml.Node, root *yaml.Node) *yaml.Node {
 		return nil
 	}
 	if ref := asString(mappingGet(m, "$ref")); ref != "" {
-		_, resolved := resolveRef(root, ref)
+		resolved := resolveRef(root, ref)
 		return resolved
 	}
 	return m

@@ -24,7 +24,7 @@ func (p *AtlasSdkVersionPlugin) Name() string {
 }
 
 func (p *AtlasSdkVersionPlugin) Process(req *ExtensionProcessorRequest) error {
-	pkg := req.ApiDefinitions[req.MappingConfig.OpenAPIRef.Name].Package
+	pkg := req.APIDefinitions[req.MappingConfig.OpenAPIRef.Name].Package
 	if pkg == "" {
 		return nil
 	}

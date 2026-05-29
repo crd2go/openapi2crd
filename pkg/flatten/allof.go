@@ -36,7 +36,7 @@ func transformAllOf(schema *yaml.Node, parentName string, root *yaml.Node) {
 		if ref == "" {
 			continue
 		}
-		_, child := resolveRef(root, ref)
+		child := resolveRef(root, ref)
 		if child == nil {
 			fmt.Fprintf(os.Stderr, "error: missing object reference %s for %s\n", ref, parentName)
 			continue

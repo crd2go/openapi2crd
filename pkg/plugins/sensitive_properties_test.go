@@ -32,7 +32,7 @@ func TestSensitivePropertyName(t *testing.T) {
 }
 
 func TestSensitivePropertyProcess(t *testing.T) {
-	stringJson := apiextensions.JSON("password")
+	stringJSON := apiextensions.JSON("password")
 
 	tests := map[string]struct {
 		request            *PropertyProcessorRequest
@@ -78,7 +78,7 @@ func TestSensitivePropertyProcess(t *testing.T) {
 					},
 					"key": {
 						Type:        "string",
-						Default:     &stringJson,
+						Default:     &stringJSON,
 						Description: `Key of the secret data containing the sensitive field value, defaults to "password".`,
 					},
 				},
@@ -129,7 +129,7 @@ func TestSensitivePropertyProcess(t *testing.T) {
 					},
 					"key": {
 						Type:        "string",
-						Default:     &stringJson,
+						Default:     &stringJSON,
 						Description: `Key of the secret data containing the sensitive field value, defaults to "password".`,
 					},
 				},

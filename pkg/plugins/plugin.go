@@ -46,7 +46,7 @@ type PropertyProcessorRequest struct {
 
 type ExtensionProcessorRequest struct {
 	ExtensionsSchema *openapi3.Schema
-	ApiDefinitions   map[string]configv1alpha1.OpenAPIDefinition
+	APIDefinitions   map[string]configv1alpha1.OpenAPIDefinition
 	MappingConfig    *configv1alpha1.CRDMapping
 }
 

@@ -138,7 +138,7 @@ func buildDiscriminatorExtension(schema *yaml.Node, root *yaml.Node) *yaml.Node 
 		discValue := mapping.Content[i].Value
 		ref := asString(mapping.Content[i+1])
 
-		_, child := resolveRef(root, ref)
+		child := resolveRef(root, ref)
 		if child == nil {
 			continue
 		}

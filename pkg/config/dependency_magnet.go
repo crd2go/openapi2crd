@@ -16,7 +16,7 @@
 package config
 
 import (
-	_ "go.mongodb.org/atlas-sdk/v20250312005/admin"
+	_ "go.mongodb.org/atlas-sdk/v20250312005/admin" // ensure all supported Atlas SDK versions are included in the module graph
 	_ "go.mongodb.org/atlas-sdk/v20250312008/admin"
 	_ "go.mongodb.org/atlas-sdk/v20250312013/admin"
 )

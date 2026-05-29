@@ -72,7 +72,7 @@ func extensionRequest(t *testing.T, apiDefinitions map[string]configv1alpha1.Ope
 
 	return &ExtensionProcessorRequest{
 		ExtensionsSchema: extensionsSchema,
-		ApiDefinitions:   apiDefinitions,
+		APIDefinitions:   apiDefinitions,
 		MappingConfig: &configv1alpha1.CRDMapping{
 			MajorVersion: "v20250312",
 			OpenAPIRef: configv1alpha1.LocalObjectReference{

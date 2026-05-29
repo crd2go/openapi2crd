@@ -179,7 +179,7 @@ func TestGeneratorConvertRecursiveSchemas(t *testing.T) {
 			Type: &openapi3.Types{"object"},
 		}
 		schemaA.Properties = map[string]*openapi3.SchemaRef{
-			"name": {Value: &openapi3.Schema{Type: &openapi3.Types{"string"}}},
+			"name":  {Value: &openapi3.Schema{Type: &openapi3.Types{"string"}}},
 			"child": {Value: schemaA},
 		}
 
