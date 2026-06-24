@@ -2,7 +2,8 @@
   "packages": {
     "go": "latest",
     "go-mockery": "latest",
-    "golangci-lint": "latest"
+    "golangci-lint": "latest",
+    "mage": "latest"
   },
   "env": {
     "GOTOOLCHAIN": "auto"

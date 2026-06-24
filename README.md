@@ -15,7 +15,7 @@ go install github.com/crd2go/openapi2crd@latest
 Or build from source:
 
 ```shell
-make build          # produces bin/openapi2crd
+mage build          # produces bin/openapi2crd
 ```
 
 ## Usage
@@ -212,9 +212,9 @@ Plugins are run in the order listed in the plugin set. They fall into four categ
 ## Development
 
 ```shell
-make unit-test    # run tests with race detection
-make ci           # fmt + tests + build (same as CI)
-make gen-mock     # regenerate mocks (requires mockery)
+mage unit-test    # run tests with race detection
+mage ci           # fmt + tests + build (same as CI)
+mage gen-mock     # regenerate mocks (requires mockery)
 ```
 
 ## Acknowledgements

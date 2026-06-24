@@ -148,6 +148,54 @@
           "store_path": "/nix/store/x3ism4ihdsansi2y1ldhs78244pxv22w-golangci-lint-2.12.2"
         }
       }
+    },
+    "mage@latest": {
+      "last_modified": "2026-05-21T08:15:18Z",
+      "resolved": "github:NixOS/nixpkgs/4a29d733e8a7d5b824c3d8c958a946a9867b3eb2#mage",
+      "source": "devbox-search",
+      "version": "1.17.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fhg0sm06ppaircwxdkrnd6i4x6svw6wp-mage-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fhg0sm06ppaircwxdkrnd6i4x6svw6wp-mage-1.17.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sd08597q7n4f8canijqq3mwl1njbhzn6-mage-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sd08597q7n4f8canijqq3mwl1njbhzn6-mage-1.17.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f9lnczh1xvxlc5wifc4dcv74pkdxz7lm-mage-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f9lnczh1xvxlc5wifc4dcv74pkdxz7lm-mage-1.17.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rq1v0di7rxib67kp1nrg2ihzcjj4fw0q-mage-1.17.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rq1v0di7rxib67kp1nrg2ihzcjj4fw0q-mage-1.17.2"
+        }
+      }
     }
   }
 }
