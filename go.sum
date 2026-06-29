@@ -198,8 +198,8 @@ go.mongodb.org/atlas-sdk/v20250312005 v20250312005.0.0 h1:uKOtHXCP/Gwuj+IF1hsKtI
 go.mongodb.org/atlas-sdk/v20250312005 v20250312005.0.0/go.mod h1:UeRE741z+kDGH00qQasZmthQxJMeA6PmAtY/2dStW+Q=
 go.mongodb.org/atlas-sdk/v20250312008 v20250312008.0.0 h1:Pzrb2bPXtkw1vDTiFxovZyYD4BIA4l0o6c2/HBqxe0I=
 go.mongodb.org/atlas-sdk/v20250312008 v20250312008.0.0/go.mod h1:o1ExR4zmunAhRHXF5hlkVUNoJNkmyQ9vRScDGahstyQ=
-go.mongodb.org/atlas-sdk/v20250312013 v20250312013.0.0 h1:oB2kgzjBWUGmKkKNJgKttyOG/EMgWudbEYxzzZiEjXE=
-go.mongodb.org/atlas-sdk/v20250312013 v20250312013.0.0/go.mod h1:dua7g/y3zGGBgnvMdXV2BjUVkRI4kJfGnYXMlje0Edc=
+go.mongodb.org/atlas-sdk/v20250312013 v20250312013.2.0 h1:RclCsea9qDsYn6eeHdguc/uB4MrT5+Xmm+Y1DdMV6SE=
+go.mongodb.org/atlas-sdk/v20250312013 v20250312013.2.0/go.mod h1:dua7g/y3zGGBgnvMdXV2BjUVkRI4kJfGnYXMlje0Edc=
 go.opentelemetry.io/auto/sdk v1.2.1 h1:jXsnJ4Lmnqd11kwkBV2LgLoFMZKizbCi5fNZ/ipaZ64=
 go.opentelemetry.io/auto/sdk v1.2.1/go.mod h1:KRTj+aOaElaLi+wW1kO/DZRXwkF4C5xPbEe3ZiIhN7Y=
 go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.54.0 h1:r6I7RJCN86bpD/FQwedZ0vSixDpwuWREjW9oRMsmqDc=
