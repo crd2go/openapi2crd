@@ -12,7 +12,7 @@ require (
 	github.com/goccy/go-yaml v1.18.0
 	github.com/magefile/mage v1.17.2
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/afero v1.12.0
+	github.com/spf13/afero v1.15.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.20.1
 	github.com/stoewer/go-strcase v1.3.1
