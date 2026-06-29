@@ -53,10 +53,8 @@ spec:
 		"invalid config": {
 			raw:            []byte("invalid yaml"),
 			expectedConfig: nil,
-			expectedError: fmt.Errorf(
-				"error unmarshalling config type: %w",
-				fmt.Errorf("error unmarshaling JSON: %w", fmt.Errorf("while decoding JSON: json: cannot unmarshal string into Go value of type v1alpha1.Config")),
-			),
+			// The inner error type varies across apimachinery versions; compare by message only (see test loop).
+			expectedError: fmt.Errorf("error unmarshalling config type: error unmarshaling JSON: while decoding JSON: json: cannot unmarshal string into Go value of type v1alpha1.Config"),
 		},
 		"invalid kind": {
 			raw: []byte(`
@@ -73,7 +71,11 @@ spec:
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			cfg, err := Parse(tt.raw)
-			require.Equal(t, tt.expectedError, err)
+			if tt.expectedError != nil {
+				require.EqualError(t, err, tt.expectedError.Error())
+			} else {
+				require.NoError(t, err)
+			}
 			require.Equal(t, tt.expectedConfig, cfg)
 		})
 	}

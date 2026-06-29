@@ -121,7 +121,6 @@ metadata:
           properties:
             v20250312:
               x-atlas-sdk-version: go.mongodb.org/atlas-sdk/v20250312005/admin
-  creationTimestamp: null
   name: groups.atlas.generated.mongodb.com
 spec:
   group: atlas.generated.mongodb.com
