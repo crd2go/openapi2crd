@@ -19,7 +19,7 @@ require (
 	github.com/stretchr/testify v1.11.1
 	go.mongodb.org/atlas-sdk/v20250312005 v20250312005.0.0
 	go.mongodb.org/atlas-sdk/v20250312008 v20250312008.0.0
-	go.mongodb.org/atlas-sdk/v20250312013 v20250312013.0.0
+	go.mongodb.org/atlas-sdk/v20250312013 v20250312013.2.0
 	golang.org/x/sync v0.21.0
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/api v0.32.9
