@@ -9,7 +9,7 @@ tool (
 
 require (
 	github.com/getkin/kin-openapi v0.140.0
-	github.com/goccy/go-yaml v1.18.0
+	github.com/goccy/go-yaml v1.19.2
 	github.com/magefile/mage v1.17.2
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/afero v1.15.0
