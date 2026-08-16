@@ -8,7 +8,7 @@ tool (
 )
 
 require (
-	github.com/getkin/kin-openapi v0.145.0
+	github.com/getkin/kin-openapi v0.146.0
 	github.com/goccy/go-yaml v1.19.2
 	github.com/magefile/mage v1.17.2
 	github.com/pkg/errors v0.9.1
