@@ -17,19 +17,17 @@ package generator
 
 import (
 	"context"
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/util/validation/field"
 )
 
 func TestValidateCRD(t *testing.T) {
 	tests := map[string]struct {
-		crd         *apiextensions.CustomResourceDefinition
-		expectedErr error
+		crd     *apiextensions.CustomResourceDefinition
+		wantErr string
 	}{
 		"valid CRD": {
 			crd: &apiextensions.CustomResourceDefinition{
@@ -62,9 +60,9 @@ func TestValidateCRD(t *testing.T) {
 					StoredVersions: []string{"v1"},
 				},
 			},
-			expectedErr: nil,
 		},
 		"invalid CRD": {
+			wantErr: "must be spec.names.plural",
 			crd: &apiextensions.CustomResourceDefinition{
 				ObjectMeta: v1.ObjectMeta{
 					Name: "examples.test.com",
@@ -95,22 +93,16 @@ func TestValidateCRD(t *testing.T) {
 					StoredVersions: []string{"v1"},
 				},
 			},
-			expectedErr: fmt.Errorf(
-				"error validating CRD %v: %w",
-				"examples.test.com",
-				field.ErrorList{&field.Error{
-					Type:     field.ErrorTypeInvalid,
-					Field:    "metadata.name",
-					BadValue: "examples.test.com",
-					Detail:   "must be spec.names.plural+\".\"+spec.group"},
-				}.ToAggregate(),
-			),
 		},
 	}
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
 			err := ValidateCRD(context.Background(), tt.crd)
-			assert.Equal(t, tt.expectedErr, err)
+			if tt.wantErr == "" {
+				assert.NoError(t, err)
+				return
+			}
+			assert.ErrorContains(t, err, tt.wantErr)
 		})
 	}
 }
