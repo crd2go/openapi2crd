@@ -1,12 +1,17 @@
 {
   "packages": {
+    "apple-sdk": {
+	"version": "latest",
+	"platforms": ["aarch64-darwin", "x86_64-darwin"]
+    },
     "go": "latest",
     "go-mockery": "latest",
     "golangci-lint": "latest",
     "mage": "latest"
   },
   "env": {
-    "GOTOOLCHAIN": "auto"
+    "GOTOOLCHAIN": "auto",
+    "MACOSX_DEPLOYMENT_TARGET": "14.0"
   },
   "shell": {
     "init_hook": ["export PATH=\"$(GOTOOLCHAIN=auto go env GOROOT)/bin:$PATH\""]
