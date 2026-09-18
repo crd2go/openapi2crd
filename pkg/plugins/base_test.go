@@ -215,7 +215,7 @@ func groupBaseCRD(t *testing.T) *apiextensions.CustomResourceDefinition {
 			Validation: &apiextensions.CustomResourceValidation{
 				OpenAPIV3Schema: &apiextensions.JSONSchemaProps{
 					Type:        "object",
-					Description: "A group, managed by the MongoDB Kubernetes Atlas Operator.",
+					Description: "A group, managed by the Operator.",
 					Properties: map[string]apiextensions.JSONSchemaProps{
 						"spec": {
 							Type:        "object",
