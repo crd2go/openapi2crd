@@ -61,7 +61,7 @@ func (p *Base) Process(req *CRDProcessorRequest) error {
 		Validation: &apiextensions.CustomResourceValidation{
 			OpenAPIV3Schema: &apiextensions.JSONSchemaProps{
 				Type:        "object",
-				Description: fmt.Sprintf("A %v, managed by the MongoDB Kubernetes Atlas Operator.", singularGvk.Resource),
+				Description: fmt.Sprintf("A %v, managed by the Operator.", singularGvk.Resource),
 				Properties: map[string]apiextensions.JSONSchemaProps{
 					"spec": {
 						Type: "object",

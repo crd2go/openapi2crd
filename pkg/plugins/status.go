@@ -50,7 +50,7 @@ func (p *Status) Process(req *MappingProcessorRequest) error {
 		),
 	)
 	if statusProps != nil {
-		statusProps.Description = fmt.Sprintf("The last observed Atlas state of the %v resource for version %v.", req.CRD.Spec.Names.Singular, req.MappingConfig.MajorVersion)
+		statusProps.Description = fmt.Sprintf("The last observed resource state of the %v resource for version %v.", req.CRD.Spec.Names.Singular, req.MappingConfig.MajorVersion)
 		req.CRD.Spec.Validation.OpenAPIV3Schema.Properties["status"].Properties[req.MappingConfig.MajorVersion] = *statusProps
 	}
 

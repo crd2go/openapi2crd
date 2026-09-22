@@ -97,7 +97,7 @@ func TestStatusProcess(t *testing.T) {
 				Properties: map[string]apiextensions.JSONSchemaProps{
 					"v20250312": {
 						Type:        "object",
-						Description: "The last observed Atlas state of the group resource for version v20250312.",
+						Description: "The last observed resource state of the group resource for version v20250312.",
 						Properties: map[string]apiextensions.JSONSchemaProps{
 							"id": {
 								Type:        "string",
